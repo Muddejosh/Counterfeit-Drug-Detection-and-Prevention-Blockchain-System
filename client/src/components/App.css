@@ -1,0 +1,40 @@
+body{
+    color: #c9c7c7;}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container {
+     /* Set the background color to an elegant gray */
+    padding: auto; /* Add some padding to the container */
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     }
+     .header{
+       text-align: left;
+       padding-top: 20px;
+       color: #7f7e7e;
+       
+     }
+
+     .flex-item {
+      flex: 0 0 auto;
+ /* Adjust the margin between the flex items as needed */
+      margin-top: 40px; /* Adjust the margin between the flex items as needed */
+      max-width: 200px;
+      
+    }
+
+.cc{
+  margin-top: 20px;
+}
+
+.detor{
+  max-width: 400px;
+}
+.green{
+  color: rgb(8, 154, 71);
+}
