@@ -49,7 +49,7 @@ function Home() {
         <MDBCardImage src={step1Img} fluid alt='...' />
 
           <MDBCardBody>
-            <MDBCardTitle>Step 1- Resgister Participants</MDBCardTitle>
+            <MDBCardTitle>Step 1- Register Participants</MDBCardTitle>
             <MDBCardText>
               Owner Should Register Raw material suppliers ,Manufacturers,
               Distributors and Retailers

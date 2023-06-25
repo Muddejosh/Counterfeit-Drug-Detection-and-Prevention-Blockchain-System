@@ -13,7 +13,7 @@ import WebcamScanner from './WebcamScanner';
 
 function QRGenerator() {
 
-  const [qr, setQr] = useState('lintangwisesa');
+  const [qr, setQr] = useState('This Is the Defualt Qr');
   const navigate = useNavigate();
   useEffect(() => {
     loadWeb3();
