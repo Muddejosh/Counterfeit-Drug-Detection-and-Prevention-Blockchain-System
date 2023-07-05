@@ -15,6 +15,9 @@ import step1Img from '../images/1.jpg';
 import step2Img from '../images/2.jpg';
 import step3Img from '../images/3.jpg';
 import step4Img from '../images/4.jpg';
+import Zeader from "./Zeader";
+import Zooter from "./Zooter";
+import { ArrowRight } from "react-bootstrap-icons";
 
 function Home() {
   const navigate = useNavigate();
@@ -31,17 +34,24 @@ function Home() {
     navigate("/track");
   };
   return (
+    <div> 
+     <Zeader></Zeader>
     <div className="container">
-    <MDBNavbar light bgColor='light'>
-        <MDBContainer fluid>
-        <MDBTypography tag='h1'><br/></MDBTypography>
-        </MDBContainer>
-      </MDBNavbar>
       <div className="header">
-      <MDBTypography tag='h2'>C.D.D.I.S -Securing Pharmacetical Supply Chain</MDBTypography>
+      <MDBTypography tag='h2'>Securing Pharmacetical Supply Chain</MDBTypography>
         <h4><br/></h4>
       </div>
+      <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Shop</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Activity</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"><br/></div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0"><br/></div>
 
+</div>
       <div className="cards-container">
         
       <div className="register">
@@ -56,7 +66,7 @@ function Home() {
             </MDBCardText>
 
            <button onClick={redirect_to_roles} className="btn btn-success btn-sm">
-Register  </button>
+Register  &nbsp;<ArrowRight /></button>
           </MDBCardBody>
         </MDBCard>
        
@@ -69,23 +79,26 @@ Register  </button>
             <MDBCardTitle>Step 2- Order Medicine</MDBCardTitle>
             <MDBCardText>Owner should order medicines. Ordered medicine is be seen by responsible parties</MDBCardText>
             <button onClick={redirect_to_addmed} className="btn btn-success btn-sm">
-            Order Medicines  </button>
+            Order Medicines  &nbsp;<ArrowRight /></button>
           </MDBCardBody>
         </MDBCard>
         
       </div>
       <div className="controlchain">
-        <MDBCard className="card" style={{ width: '300px' }}>
-        <MDBCardImage src={step3Img} fluid alt='...' />
+      <MDBCard className="card" style={{ width: '300px' }}>
+  <div className="card-image-container">
+    <MDBCardImage src={step3Img} fluid alt='...' />
+  </div>
 
-          <MDBCardBody>
-            <MDBCardTitle>Step 3- Control Supply</MDBCardTitle>
-            <MDBCardText>Control Supply Chain <br/><br/><br/></MDBCardText>
-            <button onClick={redirect_to_supply} className="btn btn-success btn-sm">
-            Control Supply Chain
-  </button>
-          </MDBCardBody>
-        </MDBCard>
+  <MDBCardBody>
+    <MDBCardTitle>Step 3- Control Supply</MDBCardTitle>
+    <MDBCardText>Control Supply Chain <br/><br/><br/></MDBCardText>
+    <button onClick={redirect_to_supply} className="btn btn-success btn-sm">
+      Control Supply Chain&nbsp;<ArrowRight />
+    </button>
+  </MDBCardBody>
+</MDBCard>
+
       </div>
       <div className="track">
         <MDBCard className="card" style={{ width: '300px' }}>
@@ -95,14 +108,16 @@ Register  </button>
             <MDBCardTitle>Track- Verify Drugs</MDBCardTitle>
             <MDBCardText>The medicines<br/><br/><br/></MDBCardText>
             <button onClick={redirect_to_track} className="btn btn-success btn-sm">
-            Track Medicines
+            Track Medicines&nbsp;<ArrowRight />
   </button>
           </MDBCardBody>
         </MDBCard>
       </div>
       
-
+    
       </div>
+    </div>
+    <Zooter></Zooter>
     </div>
   );
 }

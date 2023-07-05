@@ -4,6 +4,10 @@ import Web3 from "web3";
 import SupplyChainABI from "../artifacts/SupplyChain.json";
 import { Container, Table, Form, Button } from 'react-bootstrap';
 import { ArrowLeft, Download } from 'react-bootstrap-icons';
+import Zooter from "./Zooter2";
+import Zeader from "./Zeader";
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -145,6 +149,8 @@ function Supply() {
       
   };
   return (
+    <div>
+      <Zeader></Zeader>
         <Container className="text-left " >
       <br/>
       <br/>
@@ -154,14 +160,11 @@ function Supply() {
         <b>Current Account Address:</b> {currentaccount}
       </span>
       </nav>
-      <ArrowLeft />&nbsp;
-      <span
-        onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
-      >
-        {" "}
-        HOME
-      </span>
+      <Link to="/">
+        <Button style={{ marginRight: 10 }} variant="success">
+          <ArrowLeft />&nbsp;Back
+        </Button>
+      </Link>
       <div className="shadow p-3 mb-5 bg-white rounded ptsd">
 
       <h6>
@@ -307,6 +310,8 @@ function Supply() {
 
     </div>
         </Container>
+        <Zooter></Zooter>
+        </div>
 
   );
 }

@@ -5,6 +5,8 @@ import SupplyChainABI from "../artifacts/SupplyChain.json";
 import { Container, Table, Form, Button } from 'react-bootstrap';
 import { ArrowLeft, Download } from 'react-bootstrap-icons';
 import WebcamScanner from './WebcamScanner';
+import Zeader from "./Zeader";
+import Zooter from "./Zooter";
 
 
 
@@ -107,6 +109,7 @@ function Track() {
   }
   if (TrackTillSold) {
     return (
+
       <Container className="text-left" >
               <br/>
       <br/>
@@ -704,7 +707,8 @@ function Track() {
   };
 
   return (    
-  
+    <div>
+      <Zeader></Zeader>
   <Container className="text-left x" >
           <br/>
       <br/>
@@ -713,14 +717,9 @@ function Track() {
       <span>
         <b>Current Account Address:</b> {currentaccount}
       </span>
-      </nav><ArrowLeft />&nbsp;
-      <span
-        onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
-      >
-        {" "}
-        HOME
-      </span>
+      </nav>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+
       <div className="shadow p-3 mb-5 bg-white rounded ptsd">
       <Table striped bordered hover size="sm">
         <thead>
@@ -768,7 +767,8 @@ function Track() {
         </div>  
     </div>
     </Container>
-
+    <Zooter></Zooter>
+    </div>
   );
 }
 

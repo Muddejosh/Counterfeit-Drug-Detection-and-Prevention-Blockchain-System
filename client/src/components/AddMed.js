@@ -4,6 +4,8 @@ import Web3 from "web3";
 import SupplyChainABI from "../artifacts/SupplyChain.json";
 import { Container, Table, Form, Button } from 'react-bootstrap';
 import { ArrowLeft, Download } from 'react-bootstrap-icons';
+import Zeader from "./Zeader";
+import Zooter from "./Zooter";
 
 
 
@@ -94,6 +96,8 @@ function AddMed() {
     }
   };
   return (
+    <div>
+      <Zeader></Zeader>
     <Container className="text-left x" >
         <br/>
       <br/>    
@@ -163,6 +167,8 @@ function AddMed() {
     </div>
     </div>
     </Container>
+    <Zooter></Zooter>
+    </div>
 
   );
 }

@@ -14,7 +14,7 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
      }
      .header{
-       text-align: left;
+       text-align: center;
        padding-top: 20px;
        color: #7f7e7e;
        
@@ -38,3 +38,35 @@ body{
 .green{
   color: rgb(8, 154, 71);
 }
+
+.ptsd{
+  border-right: #397b39 solid 10px;
+
+}
+.ptsx{
+  background: #397b39 solid 10px;
+
+}
+
+
+.nav-pills {
+  --bs-nav-pills-border-radius: 0.375rem;
+  --bs-nav-pills-link-active-color: #fff;
+  --bs-nav-pills-link-active-bg: #397b39;
+}
+.nav-link{
+  color: black;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:hover:not(:hover) {
+  transform: scale(1);
+}
+

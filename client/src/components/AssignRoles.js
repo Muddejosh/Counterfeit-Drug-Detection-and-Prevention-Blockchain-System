@@ -4,6 +4,9 @@ import SupplyChainABI from "../artifacts/SupplyChain.json";
 import { useNavigate } from "react-router-dom";
 import { Container, Table, Form, Button } from 'react-bootstrap';
 import { ArrowLeft, Download } from 'react-bootstrap-icons';
+import Zeader from "./Zeader";
+import Zooter from "./Zooter";
+
 
 
 function AssignRoles() {
@@ -31,6 +34,8 @@ function AssignRoles() {
   const [MAN, setMAN] = useState();
   const [DIS, setDIS] = useState();
   const [RET, setRET] = useState();
+  const [activeTab, setActiveTab] = useState('v-pills-all');
+  const handleTabClick = (tabId) => { setActiveTab(tabId);}
 
   const loadWeb3 = async () => {
     if (window.ethereum) {
@@ -186,23 +191,92 @@ function AssignRoles() {
     } catch (err) {
       alert("An error occured!!!");
     }
+    
   };
 
   return (
-    <Container className="text-left x" >
+    <div>
+       <Zeader/>
+    <div className="container-fluid">
+<div class="row mt-6">
+  <div class="col-3 my-5 ptsx">
+  <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a
+            className={`nav-link ${activeTab === 'v-pills-all' ? 'active' : ''}`}
+            id="v-pills-all-tab"
+            onClick={() => handleTabClick('v-pills-all')}
+            href="#v-pills-all"
+            role="tab"
+            aria-controls="v-pills-all"
+            aria-selected={activeTab === 'v-pills-all'}
+          >
+            All Entities
+          </a>
+          <a
+            className={`nav-link ${activeTab === 'v-pills-rms' ? 'active' : ''}`}
+            id="v-pills-rms-tab"
+            onClick={() => handleTabClick('v-pills-rms')}
+            href="#v-pills-rms"
+            role="tab"
+            aria-controls="v-pills-rms"
+            aria-selected={activeTab === 'v-pills-rms'}
+          >
+            Raw Material Suppliers
+          </a>
+          <a
+            className={`nav-link ${activeTab === 'v-pills-mft' ? 'active' : ''}`}
+            id="v-pills-mft-tab"
+            onClick={() => handleTabClick('v-pills-mft')}
+            href="#v-pills-mft"
+            role="tab"
+            aria-controls="v-pills-mft"
+            aria-selected={activeTab === 'v-pills-mft'}
+          >
+            Manufacturers
+          </a>
+          <a
+            className={`nav-link ${activeTab === 'v-pills-dst' ? 'active' : ''}`}
+            id="v-pills-dst-tab"
+            onClick={() => handleTabClick('v-pills-dst')}
+            href="#v-pills-dst"
+            role="tab"
+            aria-controls="v-pills-dst"
+            aria-selected={activeTab === 'v-pills-dst'}
+          >
+            Distributors
+          </a>
+          <a
+            className={`nav-link ${activeTab === 'v-pills-rtl' ? 'active' : ''}`}
+            id="v-pills-rtl-tab"
+            onClick={() => handleTabClick('v-pills-rtl')}
+            href="#v-pills-rtl"
+            role="tab"
+            aria-controls="v-pills-rtl"
+            aria-selected={activeTab === 'v-pills-rtl'}
+          >
+            Retailers
+          </a>
+        </div>
+      </div>
+      <div className="col-9">
+        
+ 
+    
+    <Container className="text-left x col" >
+    <br/>
       <br/>
-      <br/>
-      <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
         <span>
           <b>Current Account Address:</b> {currentaccount}
+          
         </span>
-        </nav><ArrowLeft />&nbsp;
-        <Button variant="outline-danger my-2 my-sm-0" size="sm" onClick={redirect_to_home}>
-          HOME
-        </Button>
+        </nav>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
         
+      <div className="tab-content" id="v-pills-tabContent">
+          <div className={`tab-pane fade ${activeTab === 'v-pills-all' ? 'show active' : ''}`} id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+
         <div className="shadow p-3 mb-5 bg-white rounded ptsd">
         <h4>Raw Material Suppliers:</h4>
         <Form onSubmit={handlerSubmitRMS}>
@@ -259,11 +333,11 @@ function AssignRoles() {
           </tbody>
         </Table>
         </div>
-        <div className="shadow p-3 mb-5 bg-white rounded">
+        <div className="shadow p-3 mb-5 bg-white rounded ptsd">
         <h4>Manufacturers:</h4>
         <Form onSubmit={handlerSubmitMAN}>
           <input
-            className="form-control-sm"
+            className="form-control-sm me-2"
             type="text"
             onChange={handlerChangeAddressMAN}
             placeholder="Ethereum Address"
@@ -315,7 +389,7 @@ function AssignRoles() {
           </tbody>
         </Table>
         </div>
-        <div className="shadow p-3 mb-5 bg-white rounded">
+        <div className="shadow p-3 mb-5 bg-white rounded ptsd">
         <h4>Distributors:</h4>
         <Form onSubmit={handlerSubmitDIS}>
           <input
@@ -371,7 +445,7 @@ function AssignRoles() {
           </tbody>
         </Table>
         </div>
-        <div className="shadow p-3 mb-5 bg-white rounded">
+        <div className="shadow p-3 mb-5 bg-white rounded ptsd">
         <h4>Retailers:</h4>
         <Form onSubmit={handlerSubmitRET}>
           <input
@@ -427,8 +501,249 @@ function AssignRoles() {
           </tbody>
         </Table>
         </div>
-      </div>
+          </div>
+          <div className={`tab-pane fade ${activeTab === 'v-pills-rms' ? 'show active' : ''}`} id="v-pills-rms" role="tabpanel" aria-labelledby="v-pills-rms-tab">
+          <div className="shadow p-3 mb-5 bg-white rounded ptsd">
+        <h4>Raw Material Suppliers:</h4>
+        <Form onSubmit={handlerSubmitRMS}>
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeAddressRMS}
+            placeholder="Ethereum Address"
+            required
+          />
+          <input
+           className="form-control-sm"
+            type="text"
+            onChange={handlerChangeNameRMS}
+            placeholder="Raw Material Supplier Name"
+            required
+          />
+          <input
+           className="form-control-sm"
+            type="text"
+            onChange={handlerChangePlaceRMS}
+            placeholder="Based In"
+            required
+          />&nbsp;
+          <Button
+            variant="success"
+            size="sm"
+            type="submit"
+            onSubmit={handlerSubmitRMS}
+          >
+            Register
+          </Button>
+        </Form>
+        <Table striped bordered hover size="sm">
+          <thead >
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Place</th>
+              <th scope="col">Ethereum Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(RMS).map(function (key) {
+              return (
+                <tr key={key}>
+                  <td>{RMS[key].id}</td>
+                  <td>{RMS[key].name}</td>
+                  <td>{RMS[key].place}</td>
+                  <td>{RMS[key].addr}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        </div>
+          </div>
+          <div className={`tab-pane fade ${activeTab === 'v-pills-mft' ? 'show active' : ''}`} id="v-pills-mft" role="tabpanel" aria-labelledby="v-pills-mft-tab">
+          <div className="shadow p-3 mb-5 bg-white rounded ptsd">
+        <h4>Manufacturers:</h4>
+        <Form onSubmit={handlerSubmitMAN}>
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeAddressMAN}
+            placeholder="Ethereum Address"
+            required
+          />
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeNameMAN}
+            placeholder="Manufacturer Name"
+            required
+          />
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangePlaceMAN}
+            placeholder="Based In"
+            required
+          />&nbsp;
+          <Button
+            variant="success"
+            size="sm"
+            type="submit"
+            onSubmit={handlerSubmitMAN}
+          >
+            Register
+          </Button>
+        </Form>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Place</th>
+              <th scope="col">Ethereum Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(MAN).map(function (key) {
+              return (
+                <tr key={key}>
+                  <td>{MAN[key].id}</td>
+                  <td>{MAN[key].name}</td>
+                  <td>{MAN[key].place}</td>
+                  <td>{MAN[key].addr}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        </div>
+        
+          </div>
+          <div className={`tab-pane fade ${activeTab === 'v-pills-dst' ? 'show active' : ''}`} id="v-pills-dst" role="tabpanel" aria-labelledby="v-pills-dst-tab">
+          <div className="shadow p-3 mb-5 bg-white rounded ptsd">
+        <h4>Distributors:</h4>
+        <Form onSubmit={handlerSubmitDIS}>
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeAddressDIS}
+            placeholder="Ethereum Address"
+            required
+          />
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeNameDIS}
+            placeholder="Distributor Name"
+            required
+          />
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangePlaceDIS}
+            placeholder="Based In"
+            required
+          />&nbsp;
+          <Button
+            variant="success"
+            size="sm"
+            type="submit"
+            onSubmit={handlerSubmitDIS}
+          >
+            Register
+          </Button>
+        </Form>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Place</th>
+              <th scope="col">Ethereum Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(DIS).map(function (key) {
+              return (
+                <tr key={key}>
+                  <td>{DIS[key].id}</td>
+                  <td>{DIS[key].name}</td>
+                  <td>{DIS[key].place}</td>
+                  <td>{DIS[key].addr}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        </div>
+        
+          </div>
+          <div className={`tab-pane fade ${activeTab === 'v-pills-rtl' ? 'show active' : ''}`} id="v-pills-rtl" role="tabpanel" aria-labelledby="v-pills-rtl-tab">
+          <div className="shadow p-3 mb-5 bg-white rounded ptsd">
+        <h4>Retailers:</h4>
+        <Form onSubmit={handlerSubmitRET}>
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeAddressRET}
+            placeholder="Ethereum Address"
+            required
+          />
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangeNameRET}
+            placeholder="Retailer Name"
+            required
+          />
+          <input
+            className="form-control-sm"
+            type="text"
+            onChange={handlerChangePlaceRET}
+            placeholder="Based In"
+            required
+          />&nbsp;
+          <Button
+            variant="success"
+            size="sm"
+            type="submit"
+            onSubmit={handlerSubmitRET}
+          >
+            Register
+          </Button>
+        </Form>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Place</th>
+              <th scope="col">Ethereum Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(RET).map(function (key) {
+              return (
+                <tr key={key}>
+                  <td>{RET[key].id}</td>
+                  <td>{RET[key].name}</td>
+                  <td>{RET[key].place}</td>
+                  <td>{RET[key].addr}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        </div>
+        </div>
+        </div>
+
     </Container>
+    </div>
+    </div>
+</div>
+<Zooter/>
+</div>
   );
 }
 

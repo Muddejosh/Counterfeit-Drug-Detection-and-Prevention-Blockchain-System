@@ -8,6 +8,8 @@ import { ArrowLeft, Download } from 'react-bootstrap-icons';
 import QRCode from 'qrcode.react';
 import Scanner from "./Scanner";
 import WebcamScanner from './WebcamScanner';
+import Zeader from "./Zeader";
+import Zooter from "./Zooter2";
 
 
 
@@ -109,6 +111,9 @@ function QRGenerator() {
   };
 
   return (
+    <div>
+    <Zeader/>
+
     <Container className="text-left x" >
       <br/>
       <br/>
@@ -118,10 +123,9 @@ function QRGenerator() {
         <span>
           <b>Current Account Address:</b> {currentaccount}
         </span>
-        </nav><ArrowLeft />&nbsp;
-        <Button variant="outline-danger my-2 my-sm-0" size="sm" onClick={redirect_to_home}>
-          HOME
-        </Button>
+        </nav>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
         
         <div className="shadow p-3 mb-5 bg-white rounded ptsd">
         <h4>Generate | Verify QRCodes</h4>
@@ -206,7 +210,9 @@ function QRGenerator() {
 
     </div>
     </Container>
-    
+    <Zooter/>
+    </div>
+
   );
 }
 
