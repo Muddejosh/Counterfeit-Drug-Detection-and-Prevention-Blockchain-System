@@ -1,5 +1,5 @@
 body{
-    color: #c9c7c7;}
+    color: #ffffff;}
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -14,11 +14,15 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
      }
      .header{
-       text-align: center;
-       padding-top: 20px;
-       color: #7f7e7e;
-       
-     }
+      text-align: center;
+      padding-top: 20px;
+      color: #7f7e7e;
+      
+    }
+    .featured{
+      color: #7f7e7e;
+      
+    }
 
      .flex-item {
       flex: 0 0 auto;
@@ -70,3 +74,27 @@ body{
   transform: scale(1);
 }
 
+/* MyCarousel.css */
+
+/* Customize transition color */
+.carousel-item {
+  background-color: #f0f0f0; /* Set the desired background color for the carousel item */
+}
+
+/* Customize navigation button colors */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #5e5e5e;
+  border-radius: 20px;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  transform: translateX(10);
+  
+  /* Set the desired background color for the navigation buttons */
+}
+
+.custom-prev-icon,
+.custom-next-icon {
+  color: #fff; /* Set the desired color for the navigation button icons */
+}
