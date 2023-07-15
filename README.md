@@ -4,7 +4,7 @@
 ![Image Description](shots/login.png)
 ![Image Description](shots/home.png)
 ![Image Description](shots/home2.png)
-![Image Description](shots/hen adding user fails.png)
+![Image Description](shots/henaddinguserfails.png)
 ![Image Description](shots/generating QR code.png)
 ![Image Description](shots/donloading qr code for product attachment.png)
 ![Image Description](shots/scanning QR code for verification.png)
