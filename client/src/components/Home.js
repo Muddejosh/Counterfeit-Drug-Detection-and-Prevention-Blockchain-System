@@ -20,8 +20,7 @@ import Zooter from "./Zooter2";
 import MyCarousel from "./MyCarousel";
 import { ArrowRight } from "react-bootstrap-icons";
 import React, { useState,useEffect } from 'react';
-import { Carousel } from 'react-bootstrap'
-
+import Accordion from "./Accordion ";
 function Home() {
   const navigate = useNavigate();
   const redirect_to_roles = () => {
@@ -48,12 +47,14 @@ function Home() {
     <div> 
      <Zeader></Zeader>
     <div className="container-fluid ">
-      <div className="header">
-      <MDBTypography tag='h2'>Securing Pharmacetical Supply Chain</MDBTypography>
+      <div className="header ">
+      <MDBTypography tag='h3'>Securing Pharmacetical Supply Chain</MDBTypography>
         <h4><br/></h4>
         
       </div>
-      <div className="container">
+      <div className="container-fluid row ms-3">
+     <Accordion/>
+      <div className="container col-10">
       <div className="nav nav-tabs" id="nav-tab" role="tablist">
         <button
           className={`nav-link ${activeTab === 'nav-home' ? 'active' : ''}`}
@@ -92,10 +93,12 @@ function Home() {
           tabIndex="0"
         >
           <br /> 
-            <h2 className="featured">Featured Products</h2>
-       
+          
+            <legend><h2 className="featured">Featured Products</h2></legend>
+       <fieldset className="myFieldset">
           <MyCarousel/>
           <MyCarousel/>
+          </fieldset>
         </div>
         <div
           className={`tab-pane fade ${activeTab === 'nav-profile' ? 'show active' : ''}`}
@@ -104,9 +107,9 @@ function Home() {
           aria-labelledby="nav-profile-tab"
           tabIndex="0"
         >
-          <br />
+          <br /><fieldset className="myFieldset2">
           <div className="cards-container">
-        
+          
         <div className="register">
           <MDBCard className="card" style={{ width: '300px' }}>
           <MDBCardImage src={step1Img} fluid alt='...' />
@@ -168,16 +171,16 @@ function Home() {
         </div>
         
       
+        </div></fieldset><h4><br/></h4><h4><br/></h4><h4><br/></h4><h4><br/></h4>
+    <h4><br/></h4><h4><br/></h4><h4><br/><br/></h4>
+ 
+   
         </div>
-        </div>
-      </div>
-      </div>
-
+      </div>  
+</div>
+</div>
     </div>
-    <h4><br/></h4><h4><br/></h4><h4><br/></h4><h4><br/></h4>
-    <h4><br/></h4><h4><br/></h4><h4><br/></h4><h4><br/></h4>
-    <h4><br/></h4>
-    <h4><br/></h4>
+    
     <Zooter></Zooter>
     </div>
   );

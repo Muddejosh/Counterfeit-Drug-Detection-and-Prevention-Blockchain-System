@@ -199,7 +199,7 @@ function AssignRoles() {
        <Zeader/>
     <div className="container-fluid">
 <div class="row mt-6">
-  <div class="col-3 my-5 ptsx">
+  <div class="container col-2 my-5 ptsx">
   <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <a
             className={`nav-link ${activeTab === 'v-pills-all' ? 'active' : ''}`}
@@ -258,11 +258,9 @@ function AssignRoles() {
           </a>
         </div>
       </div>
-      <div className="col-9">
-        
- 
+      <div className="col">
     
-    <Container className="text-left x col" >
+    <Container className="text-left" >
     <br/>
       <br/>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">

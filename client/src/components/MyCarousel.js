@@ -11,12 +11,24 @@ import step60Img from '../images/penadryl.jfif';
 import step70Img from '../images/pedialyte.jfif';
 import step80Img from '../images/zoloft.jfif';
 import { ArrowRight } from "react-bootstrap-icons";
+import { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
+import AddMed2 from "./AddMed2";
 
 
 const MyCarousel = () => {
     const carouselStyle = {
         backgroundColor: '#ffffff', // Set the background color to white
       };
+      const [showModal, setShowModal] = useState(false);
+
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
   return (
     <Carousel
       controls
@@ -37,7 +49,8 @@ const MyCarousel = () => {
           <div className="row">
             <div className="col-3">
               <div className="register">
-                <MDBCard className="" style={{ width: '300px', marginTop: '20px', marginBottom:'20px'}}>
+              <a onClick={handleModalOpen}>
+                <MDBCard className="card" style={{ width: '300px', marginTop: '20px', marginBottom:'20px'}}>
                   <MDBCardImage src={step10Img} fluid alt="..." />
                   <MDBCardBody>
                     <MDBCardTitle>Advil (Ibuprofen) tablets</MDBCardTitle>
@@ -49,8 +62,18 @@ const MyCarousel = () => {
                     </button>
                   </MDBCardBody>
                 </MDBCard>
+                </a>
               </div>
             </div>
+            <Modal show={showModal} onHide={handleModalClose}>
+        <Modal.Header closeButton>
+        <h3>Advil (Ibuprofen) tablets</h3>
+        </Modal.Header>
+        <img src={step10Img} fluid alt="..." />
+        <Modal.Body>
+          <AddMed2/>
+        </Modal.Body>
+      </Modal>
             <div className="col-3">
             <div className="register">
             <MDBCard className="" style={{ width: '300px', marginTop: '20px', marginBottom:'20px'}}>

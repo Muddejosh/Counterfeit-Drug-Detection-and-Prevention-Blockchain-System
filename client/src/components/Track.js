@@ -113,9 +113,8 @@ function Track() {
       <Container className="text-left" >
               <br/>
       <br/>
-      <div></div>
-      <div className="shadow p-3 mb-5 bg-white rounded ptsd">
-      <article className="col-4">
+      <div className="shadow p-3 mb-5">
+      <article className="myFieldset">
           <h3>
             <b>
               <u>Medicine:</u>
@@ -143,7 +142,7 @@ function Track() {
         <hr />
         <br />
         <section className="row">
-          <article className="col-3">
+          <article className="col-3 myFieldset">
             <h4>
               <u>Raw Materials Supplied by:</u>
             </h4>
@@ -160,7 +159,7 @@ function Track() {
             </p>
           </article>
           <span>&#10132;</span>
-          <article className="col-3">
+          <article className="col-3 myFieldset">
             <h4>
               <u>Manufactured by:</u>
             </h4>
@@ -177,7 +176,7 @@ function Track() {
             </p>
           </article>
           <span>&#10132;</span>
-          <article className="col-3">
+          <article className="col-3 myFieldset">
             <h4>
               <u>Distributed by:</u>
             </h4>
@@ -211,7 +210,7 @@ function Track() {
             </p>
           </article>
           <span>&#10132;</span>
-          <article className="col-3">
+          <article className="col-3 myFieldset">
             <h4>
               <u>Sold</u>
             </h4>
@@ -242,8 +241,8 @@ function Track() {
   if (TrackTillRetail) {
     return (
 
-      <div className="container-xl">
-        <article className="col-4">
+      <div className="container">
+        <article className=" myFieldset">
           <h3>
             <b>
               <u>Medicine:</u>
@@ -362,8 +361,8 @@ function Track() {
   }
   if (TrackTillDistribution) {
     return (
-      <div className="container-xl">
-        <article className="col-4">
+      <div className="container">
+        <article className=" myFieldset">
           <h3>
             <b>
               <u>Medicine:</u>
@@ -465,8 +464,8 @@ function Track() {
   if (TrackTillManufacture) {
     return (
 
-      <div className="container-xl">
-        <article className="col-4">
+      <div className="container">
+        <article className="myFieldset">
           <h3>
             <b>
               <u>Medicine:</u>
@@ -552,8 +551,8 @@ function Track() {
   if (TrackTillRMS) {
     return (
 
-      <div className="container-xl">
-        <article className="col-4">
+      <div className="container">
+        <article className="col-4 myFieldset">
           <h3>
             <b>
               <u>Medicine:</u>
@@ -622,8 +621,8 @@ function Track() {
   if (TrackTillOrdered) {
     return (
 
-      <div className="container-xl">
-        <article className="col-4">
+      <div className="container">
+        <article className=" myFieldset">
           <h3>
             <b>
               <u>Medicine:</u>

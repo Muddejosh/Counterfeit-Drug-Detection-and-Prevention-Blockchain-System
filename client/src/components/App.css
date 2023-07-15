@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body{
-    color: #ffffff;}
+    /* color: #ffffff; */
+    font-family: 'Poppins', sans-serif;
+  }
+
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -84,7 +89,7 @@ body{
 /* Customize navigation button colors */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #5e5e5e;
+  background-color: #f1712176;
   border-radius: 20px;
   width: auto;
   padding: 0;
@@ -96,5 +101,35 @@ body{
 
 .custom-prev-icon,
 .custom-next-icon {
-  color: #fff; /* Set the desired color for the navigation button icons */
+  color: #f17021; /* Set the desired color for the navigation button icons */
+}
+
+.signed{
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.myFieldset {
+  border: 3px dashed #f17021;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+
+}
+.myFieldset2 {
+  border: 3px dashed #f17021;
+  border-radius: 5px;
+  padding: 10px 150px;
+ 
+}
+.acc{
+  background-color: #000000;
+}
+
+.authcontainer{
+  border-top: #397b39 solid 10px;
+
+}.authcontainer2{
+  border-top: #397b39 solid 5px;
 }

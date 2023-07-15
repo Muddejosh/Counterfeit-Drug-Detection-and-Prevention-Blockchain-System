@@ -1,24 +1,61 @@
-import React, { Component } from 'react';
 import logo from '../images/logo.jpg';
 import { Container, Table, Form, Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { auth } from "../firebase";
 
 
 
 
 function Zeader() {
+
+  const [authUser, setAuthUser] = useState(null);
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+
+    return () => {
+      listen();
+    };
+  }, []);
+
   const navigate = useNavigate();
 
   const redirect_to_home = () => {
-    navigate("/");
+    navigate("/home");
     
   };
   const redirect_to_track = () => {
     navigate("/track");
   };
+
+  const userSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("sign out successful");
+      })
+      .catch((error) => console.log(error));
+  };
+
         return (
             <div>
-                <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm bg-white rounded">
+              <div className='signed'>
+      {authUser ? (
+        <>
+          <div className='signedtext'>{`Signed In as ${authUser.email}`}</div>
+        </>
+      ) : (
+        <p>Signed Out</p>
+      )}
+    </div>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm bg-white authcontainer2">
   <div class="container-fluid">
     <a class="navbar-brand" href="" className='me-2'>
     <img src={logo} style={{ width: '100px' , marginLeft: '20px'}} onClick={redirect_to_home} />
@@ -35,13 +72,73 @@ function Zeader() {
           <a class="nav-link disabled"></a>
         </li>
       </ul>
+      <button className="btn btn-danger me-2 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Report Counterfeit</button>
       <button class="btn btn-light me-2" onClick={redirect_to_home}>Home</button>
       <button class="btn btn-light me-2" onClick={redirect_to_track}>Track</button>
 
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success me-2" type="submit">Search</button>
+        <button class="btn btn-outline-danger " type="submit" onClick={userSignOut}>Logout</button>
       </form>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">   Counterfeit Drug Report</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+
+    <form>
+      <div class="form-group">
+        <label for="reporterName">Reporter's Name:</label>
+        <input type="text" class="form-control" id="reporterName" placeholder="Enter your name"/>
+      </div>
+
+      <div class="form-group">
+        <label for="reporterEmail">Reporter's Email:</label>
+        <input type="email" class="form-control" id="reporterEmail" placeholder="Enter your email"/>
+      </div>
+
+      <div class="form-group">
+        <label for="drugName">Drug Name:</label>
+        <input type="text" class="form-control" id="drugName" placeholder="Enter the drug name"/>
+      </div>
+
+      <div class="form-group">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" class="form-control" id="manufacturer" placeholder="Enter the drug manufacturer"/>
+      </div>
+
+      <div class="form-group">
+        <label for="batchNumber">Batch Number:</label>
+        <input type="text" class="form-control" id="batchNumber" placeholder="Enter the batch number"/>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description of Suspected Counterfeit:</label>
+        <textarea class="form-control" id="description" rows="5" placeholder="Provide a detailed description of the suspected counterfeit"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="evidence">Evidence (Attach files, if any):</label>
+        <input type="file" class="form-control-file" id="evidence"/>
+      </div>
+    </form>
+  </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Submit Report</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </nav>

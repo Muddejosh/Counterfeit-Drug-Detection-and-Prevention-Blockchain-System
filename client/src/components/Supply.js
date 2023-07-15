@@ -77,7 +77,7 @@ function Supply() {
     );
   }
   const redirect_to_home = () => {
-    navigate("/");
+    navigate("/home");
   };
   const handlerChangeID = (event) => {
     setID(event.target.value);
@@ -160,7 +160,7 @@ function Supply() {
         <b>Current Account Address:</b> {currentaccount}
       </span>
       </nav>
-      <Link to="/">
+      <Link to="/home">
         <Button style={{ marginRight: 10 }} variant="success">
           <ArrowLeft />&nbsp;Back
         </Button>

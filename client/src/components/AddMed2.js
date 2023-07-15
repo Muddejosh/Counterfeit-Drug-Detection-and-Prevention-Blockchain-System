@@ -97,79 +97,42 @@ function AddMed() {
   };
   return (
     <div>
-      <Zeader></Zeader>
+      
     <Container className="text-left x" >
-        <br/>
-      <br/>    
-    <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <span>
-        <b>Current Account Address:</b> {currentaccount}
-      </span>
-      </nav><ArrowLeft />&nbsp;
-      <span
-        onClick={redirect_to_home}
-        className="btn btn-outline-danger btn-sm"
-      >
-        {" "}
-        HOME
-      </span>
-      <br />
-      <div className="shadow p-3 mb-5 bg-white rounded ptsd">
-      <h4>Add Medicine Order:</h4>
       <form onSubmit={handlerSubmitMED}>
         <input
           className="form-control-sm"
           type="text"
           onChange={handlerChangeNameMED}
           placeholder="Medicine Name"
+          style={{width: "100%"}}
+          disabled
+          value={"Advil (Ibuprofen) tablets"}
+
           required
-        />
+        />&nbsp;<br/>
         <input
           className="form-control-sm"
           type="text"
           onChange={handlerChangeDesMED}
           placeholder="Medicine Description"
+          style={{width: "100%"}}
+         disabled
+         value={"14 dozens"}
           required
-        />&nbsp;
+        />&nbsp;<br/>
         <button
-          className="btn btn-success btn-sm"
+          className="btn btn-success btn-lg"
+          style={{width: "100%"}}
           onSubmit={handlerSubmitMED}
         >
           Order
         </button>
       </form>
-      <br />
-      <h5>Ordered Medicines:</h5>
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Current Stage</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(MED).map(function (key) {
-            return (
-              <tr key={key}>
-                <td>{MED[key].id}</td>
-                <td>{MED[key].name}</td>
-                <td>{MED[key].description}</td>
-                <td>{MedStage[key]}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
-
-    </div>
-    </div>
+      <br />   
     </Container>
     <Zooter></Zooter>
     </div>
-
   );
 }
 
