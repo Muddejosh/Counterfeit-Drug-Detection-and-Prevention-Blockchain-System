@@ -1,6 +1,8 @@
 # Simple Supply Chain Simulation
 
-[Supply chain simulation using blockchain.](https://www.youtube.com/watch?v=2e-NGuT1PnY)
+<!-- [Supply chain simulation using blockchain.](https://www.youtube.com/watch?v=2e-NGuT1PnY) -->
+![Image Description](client\src\images\1.jpg)
+
 
 ## 🔧 Setting up Local Development
 
@@ -17,7 +19,8 @@ Import the ganache local blockchain accounts in metamask using the mnemonic prov
 Clone the repo
 
 ```bash
-git clone https://github.com/codeTIT4N/supply-chain-truffle-react.git
+git clone https://github.com/Muddejosh/Counterfeit-Drug-Detection-and-Prevention-Blockchain-System.git
+
 cd supply-chain-truffle-react
 ```
 
