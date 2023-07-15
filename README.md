@@ -16,26 +16,31 @@ This is the home screen where the customer views and orders drugs
 ### Administration activities
 
 The activities Recorded on the blockchain for verification. (You need to be logged into meta mask to continue) 
+
 ![Image Description](shots/home2.png)
 
 ### Account Errors
 
 Only the right blockchain account can do certain operations. Make sure to use the right account If confused checkout youtube
-![Image Description](shots/henaddinguserfails.png)
+
+![Image Description](shots/when-adding-user-fails.png)
 
 ### Generate QR-Code
 
 Manufacturer can generate QR-Code as well as download them and attach to products
+
 ![Image Description](shots/generating-QR-code.png)
 
 ### Donloading Qr-code
 
 Donloading Qr-code
+
 ![Image Description](shots/donloading-qr-code.png)
 
 ### Scanning
 
 Scanning to verify QR-Code on product
+
 ![Image Description](shots/scanning-QR-code-for-verification.png)
 
 
