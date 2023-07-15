@@ -1,7 +1,7 @@
 # Simple Supply Chain Simulation
 
 <!-- [Supply chain simulation using blockchain.](https://www.youtube.com/watch?v=2e-NGuT1PnY) -->
-![Image Description](shots\login.png)
+![Image Description](shots/login.png)
 
 
 ## 🔧 Setting up Local Development
