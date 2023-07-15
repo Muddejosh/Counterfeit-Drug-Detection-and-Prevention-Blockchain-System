@@ -1,13 +1,26 @@
 # Simple Supply Chain Simulation
 
 <!-- [Supply chain simulation using blockchain.](https://www.youtube.com/watch?v=2e-NGuT1PnY) -->
+Login/SignIn in into the System(Compulsory), Authentication is done through firebase (Check firebase.js)
 ![Image Description](shots/login.png)
+
+This is the home screen where the customer views and orders drugs
 ![Image Description](shots/home.png)
+
+The activities Recorded on the blockchain for verification. (You need to be logged into meta mask to continue) 
 ![Image Description](shots/home2.png)
+
+Only the right blockchain account can do certain operations. If confused checkout youtube
 ![Image Description](shots/henaddinguserfails.png)
-![Image Description](shots/generating QR code.png)
-![Image Description](shots/donloading qr code for product attachment.png)
-![Image Description](shots/scanning QR code for verification.png)
+
+Manufacturer can generate QR-Code as well as download them and attach to products
+![Image Description](shots/generating-QR-code.png)
+
+Donloading Qr-code
+![Image Description](shots/donloading-qr-code.png)
+
+Scanning to verify QR-Code on product
+![Image Description](shots/scanning-QR-code-for-verification.png)
 
 
 
