@@ -256,6 +256,17 @@ function AssignRoles() {
           >
             Retailers
           </a>
+          <a
+            className={`nav-link ${activeTab === 'v-pills-rpt' ? 'active' : ''}`}
+            id="v-pills-rpt-tab"
+            onClick={() => handleTabClick('v-pills-rpt')}
+            href="#v-pills-rpt"
+            role="tab"
+            aria-controls="v-pills-rpt"
+            aria-selected={activeTab === 'v-pills-rpt'}
+          >
+            Reports
+          </a>
         </div>
       </div>
       <div className="col">
@@ -733,6 +744,20 @@ function AssignRoles() {
           </tbody>
         </Table>
         </div>
+        
+        <div className={`tab-pane fade ${activeTab === 'v-pills-rpt' ? 'show active' : ''}`} id="v-pills-rpt" role="tabpanel" aria-labelledby="v-pills-rpt-tab">
+          <div className="shadow p-3 mb-5 bg-white rounded ptsd">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+
+          </div>
+          
+          </div>
         </div>
         </div>
 
