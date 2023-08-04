@@ -1,4 +1,4 @@
-# Simple Supply Chain Simulation
+# Drug Safe, The Ultimate Pharmaceutical product Authenticity System
 
 <!-- [Supply chain simulation using blockchain.](https://www.youtube.com/watch?v=2e-NGuT1PnY) -->
 ## Usage
